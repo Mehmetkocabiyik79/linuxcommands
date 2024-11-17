@@ -6,435 +6,688 @@
 
 ## **Linux İşletim Sistemi Hakkında**
 
-Linux, **Unix benzeri** bir işletim sistemi olup, **açık kaynaklı** ve **topluluk tarafından geliştirilen** bir yapıya sahiptir. Linux, dünya çapında **bilgisayarlar**, **sunucular**, **mobil cihazlar** ve **gömülü cihazlar** gibi birçok platformda kullanılmaktadır.
+- Linux, **Unix benzeri** bir işletim sistemi olup, **açık kaynaklı** ve **topluluk tarafından geliştirilen** bir yapıya sahiptir. Linux, dünya çapında **bilgisayarlar**, **sunucular**, **mobil cihazlar** ve **gömülü cihazlar** gibi birçok platformda kullanılmaktadır.
+- Linux, kullanıcılarına **özelleştirilebilir** ve **güçlü** bir ortam sunarak, geliştiriciler ve sistem yöneticileri için popüler bir tercihtir.
 
-Linux, kullanıcılarına **özelleştirilebilir** ve **güçlü** bir ortam sunarak, geliştiriciler ve sistem yöneticileri için popüler bir tercihtir.
+## Dosya ve Dizin İşlemleri
 
-## **Temel Linux Komutları**
+### 1.`ls` Komutu
 
-### 1.📋 `ls -l` Komutu
+**`ls`**, Linux ve Unix tabanlı işletim sistemlerinde kullanılan en yaygın komutlardan biridir. Bu komut, bulunduğunuz dizindeki dosya ve klasörlerin listesini görüntülemek için kullanılır. **`ls`** komutunun farklı seçenekler ile özelleştirilebilen güçlü bir kullanım yapısına sahiptir.
 
-`ls -l`, **dosyaları uzun liste formatında** gösterir. Bu format, dosyanın yalnızca ismini değil, aynı zamanda aşağıdaki bilgileri de içerir:
+### Örnek Kullanım
 
-- 📜 **İzinler** (kimlerin dosyayı okuyup yazabileceği)
-- 👤 **Sahip** (dosyanın sahibi olan kullanıcı)
-- 📏 **Boyut** (dosyanın bayt cinsinden büyüklüğü)
-- 🕒 **Son Değiştirilme Tarihi** (dosyanın en son güncellendiği tarih ve saat)
-
-#### Örnek Kullanım:
-```bash
-ls -l
-```
-![Açıklayıcı Göresel](Resimler/ls%20komutları/ls%20-l%20komutu.png)
-
-### 2.👀`ls -a`  Komutu 
-`ls -a`, bu komut dizindeki tüm dosyaları ve klasörleri (. ile başlayan gizli dosyalar dahil) görüntüler. 
-Gizli dosyaları görmek, sistem yapılandırma dosyalarını veya kullanıcı tarafından gizlenmiş dosyaları yönetmek için faydalıdır.
-```bash	
-ls -a
-```
-![Açıklayıcı Göresel](Resimler/ls%20komutları/ls%20-a%20komutu.png)
-### 3.🗂️ `ls -la` Komutu 
-`ls -la` komutu, **gizli dosyaları** ve **klasörleri** **uzun liste formatında** gösterir. Bu komut, dosyanın yalnızca ismini değil, aynı zamanda aşağıdaki bilgileri de içerir;
-- 📜 **İzinler** (kimlerin dosyayı okuyup yazabileceği)
-- 👤 **Sahip** (dosyanın sahibi olan kullanıcı))
-- 📏 **Boyut** (dosyanın bayt cinsinden büyüklüğü)
-- 🕒 **Son Değiştirilme Tarihi** (dosyanın en son güncellendiği tarih ve saat)
-#### Örnek Kullanım:
-```bash	
-ls -la
-```
-![Açıklayıcı Görsel](Resimler/ls%20komutları/ls%20-la%20komutu.png)
-### 4.📏 `ls -lh` Komutu
-`ls -lh`komutu, dosya boyutlarını **insan tarafından okunabilir** şekilde (KB, MB, GB gibi) gösterir. **Uzun liste formatı** ile birleştirilmiş olan bu komut, dizindeki dosyaları ve klasörleri daha anlaşılır bir şekilde gösterir.
-## Özellikler: ##
-- 🗂 **Boyut Formatı**: Dosya boyutlarını KB, MB gibi kolay okunur bir formatta gösterir.
-- 📜 **İzinler, Sahiplik, Tarih**: `ls -l` komutuyla gelen diğer ayrıntıları da içerir.
-### Örnek Kullanım:
-```bash 
-ls -lh
-```
-![Açıklayıcı Göresel](Resimler/ls%20komutları/ls%20-lh%20komutu.png)
-### 5.🔄 `ls -R`Komutu
-`ls -R` komutu,**alt dizinleri de özyinelemeli (rekürsif) olarak listeleyerek**, geçerli dizinin yanı sıra tüm alt dizinlerdeki dosya ve klasörleri gösterir. Bu sayede çok katmanlı klasör yapılarındaki tüm içeriği kolayca görmemizi sağlar.
-### Özellikler:
-- 📂 **Alt Dizin İçeriğini Görüntüleme**: Komut, yalnızca geçerli dizini değil, iç içe tüm dizinleri listeleyerek içerik hakkında kapsamlı bilgi verir.
-- 🔍 **Dizinler Arası Geçiş**: Alt dizinler arasında geçiş yapmadan, tüm dizinleri tek bir komutla görüntülemenize olanak tanır.
-#### Örnek Kullanım:
-````bash
-ls -R
-````
-![Açıklayıcı Göresel](Resimler/ls%20komutları/ls%20-R.png)
-### 6.🔍`ls -alh` Komutu
-`ls -alh` komutu, `ls -la` komutuna ek olarak, **gizli dosyaları** ve **klasörleri** **uzun liste formatında** ve **boyut formatı** ile birleştirilmiş olarak gösterir.
-### Özellikler:
-- 🗂 **Gizli Dosyaları Listeleme**: . (nokta) ile başlayan gizli dosya ve klasörleri de gösterir.
-- 📜 **Detaylı Dosya Bilgisi**: Dosya izinleri, sahip, grup, boyut ve tarih gibi ayrıntıları içerir.
-- 📏 **Okunabilir Boyutlar**: Dosya boyutlarını KB, MB gibi insan tarafından okunabilir formatta görüntüler.
-
-### Örnek Kullanım:
-```bash
-ls -alh
-```
-![Açıklayıcı Görsel](Resimler/ls%20komutları/ls%20-alh.png)
-
-### 7.📏 `ls -ls` Komutu 
-
-`ls -lS` komutu, dosya ve dizinleri **boyutlarına göre büyükten küçüğe sıralayarak** listeler. **Uzun liste formatı** ile birlikte, dosya izinleri, sahip, grup ve tarih gibi ayrıntılar da gösterilir. Gizli dosyaları da sıralamaya dahil etmek için `-a` seçeneğiyle birlikte kullanılabilir.
-
-### Özellikler:
-- 📂 **Boyut Bazlı Sıralama**: Dosya ve dizinleri büyükten küçüğe sıralar, bu da en büyük dosyaları en üstte görmeyi kolaylaştırır.
-- 📝 **Detaylı Dosya Bilgisi**: `-l` seçeneği ile dosya izinleri, sahip, grup ve tarih bilgilerini içerir.
-- 🔍 **Gizli Dosya Desteği**: `-a` seçeneği ile gizli dosyalar da listeye dahil edilebilir.
-
-### Örnek Kullanım:
-```bash
-ls -lS
-"Gİzli Dosyaları dahil etmek için"
-ls -laS
-```
-![Açıklayıcı Göresel](Resimler/ls%20komutları/ls%20-LS%20--sort=size.png)
-
-### 8.📅 `ls -ltr` Komutu
-`ls -ltr` komutu, dosya ve dizinleri **uzun formatta** listelerken, **son değiştirilme tarihine göre sıralama** yapar ve **en eski dosyaları en üstte** olacak şekilde **ters sırada** gösterir. Bu komut, özellikle **en yeni dosyaları listenin en altında** görmek için kullanışlıdır.
-
-### Özellikler:
-- 🗂 **Uzun Liste Formatı**: `-l` seçeneği, dosya izinleri, sahip, grup, boyut ve tarih gibi ayrıntılı bilgileri içerir.
-- 🔄 **Ters Sıralama**: `-r` seçeneği ile eski dosyalar üstte, yeni dosyalar altta olacak şekilde sıralanır.
-- ⏰ **Tarih Bazlı Sıralama**: `-t` seçeneği ile dosyalar, son değiştirilme tarihine göre sıralanır.
-
-### Örnek Kullanım:
-```bash
-ls -ltr
-```
-![Açıklayıcı Göresel](Resimler/ls%20komutları/ls%20-ltr%20.png)
-
-### 9.🔄 `ls -r` Komutu
-##  `ls -r` Komutu
-
-`ls -r` komutu, geçerli dizindeki dosya ve dizinleri **ters sırada** listelemek için kullanılır. Varsayılan olarak alfabetik sırada listeleyen `ls` komutunun aksine, `ls -r` ile **sondan başa doğru sıralama** yapılır. Bu özellik, dosya veya klasörleri ters sırayla gözden geçirme ihtiyacı olduğunda oldukça kullanışlıdır.
-
-### Özellikler:
-- 🔄 **Ters Sıralama**: Dosya ve dizinleri sondan başa sıralar.
-- 🗂 **Varsayılan Listelemeyi Ters Çevirme**: `ls` komutunun varsayılan liste sırasını değiştirir.
-
-### Örnek Kullanım:
-```bash
-ls -r
-```
-![Açıklayıcı Görsel](Resimler/ls%20komutları/ls%20-r%20komutu.png/)
-
-### 10.📏 `ls -S` Komutu
-
-`ls -S` komutu, dosya ve dizinleri **boyutlarına göre büyükten küçüğe** sıralar. Özellikle disk alanı yönetimi yaparken veya en büyük dosyaları hızlıca bulmak gerektiğinde faydalıdır.
-
-### Özellikler:
-- 📂 **Boyuta Göre Sıralama**: Dosyaları büyükten küçüğe doğru sıralar.
-- 👀 **Disk Kullanımını Görselleştirme**: Özellikle büyük dosyaları tespit etmek için idealdir.
-
-### Örnek Kullanım:
-```bash
-ls -S
-```
-![Açıklayıcı Görsel](Resimler/ls%20komutları/ls%20-S%20komutu%20.png)
-
-### 11.🕒 `ls -t` Komutu
-
-`ls -t` komutu, dosya ve dizinleri **son değiştirilme tarihine göre sıralar**. Bu komut sayesinde en son güncellenmiş dosyalar liste başında yer alır. Dosya değişikliklerini takip etmeniz gerektiğinde oldukça kullanışlıdır.
-
-### Özellikler:
-- 🕒 **Zamana Göre Sıralama**: Dosyaları son değiştirilme tarihine göre sıralar.
-- 📁 **En Son Değiştirilen En Üstte**: Güncellenmiş dosyaları hızlıca görmenizi sağlar.
-
-### Örnek Kullanım:
-```bash
-ls -t
-```
-![Açıklayıcı Görsel](Resimler/ls%20komutları/ls%20-t%20komutu.png)
-### 12.📁 `cd` Komutu:
-
-`cd` komutu, **dizin değiştirme** komutudur. Bu komut sayesinde, istediğiniz dizine geçiş yapabilirsiniz. Belirli bir dizine gitmek için komutun ardından dizinin tam yolunu belirtmeniz yeterlidir.
-
-### Özellikler:
-- 🛠️ **Dizin Değiştirme**: Çalışma dizininizi istediğiniz dizine değiştirebilirsiniz.
-- 📍 **Dizin Yolunu Belirtme**: `cd` komutunu kullanarak, dizin yolunu vererek doğrudan o dizine geçebilirsiniz.
-
-### Örnek Kullanım:
-```bash
-cd /home/kullanici/Belgeler
-```
-![Açıklayıcı Görsel](Resimler/cd%20komutu/cd%20dizin%20yolu.png)
-
-### 13.🔼 `cd ..` Komutu
-
-`cd ..` komutu, genellikle yanlış bir şekilde kullanılsa da, **bir üst dizine çıkma** amacıyla kullanılan bir komuttur. Ancak, doğru kullanımda `cd ..` komutunu kullanmak gerekmektedir.
-
-### Doğru Kullanım:
-- **Bir Üst Dizin**: `cd ..` komutu, bulunduğunuz dizinin **bir üst seviyesine** çıkmanıza olanak sağlar.
-
-### Yanlış Kullanım:
-- **`cd ...` Komutu**: Bu komut genellikle çalışmaz, çünkü `...` bir dizin yolu olarak kabul edilmez. Bunun yerine, bir üst dizine çıkmak için sadece `..` kullanmanız gerekir.
-
-### Doğru Kullanım Örneği:
-```bash
-cd ..
-```
-![Açıklayıcı Görsel](Resimler/cd%20komutu/cd%20(..).png)
-
-### 14. 🔄 `cd -` Komutu
-
-`cd -` komutu, **önceki dizine geri dönme** işlevini görür. Bu komut sayesinde, bir önceki dizine kolayca geçiş yapabilirsiniz.
-
-### Özellikler:
-- 🔄 **Önceki Dizin**: `cd -` komutu, son geçiş yaptığınız dizine geri dönmenizi sağlar.
-- 🚶‍♂️ **Hızlı Gezinme**: Uzun ve karmaşık dizin yollarında çalışırken, bir önceki dizine dönüş yapmak çok kolaydır.
-
-### Örnek Kullanım:
-
-Önceki dizine geçiş yapmadan önce, aşağıdaki örneği göz önünde bulundurabilirsiniz:
-
-1. İlk olarak, dizin değiştirin:
-```bash
-cd /home/kullanici/Belgeler
-```
-2. Sonra ise `cd -` komutunu uygulayın:
-```bash
-cd ..
-```
-![Açıklayıcı Görsel](Resimler/cd%20komutu/cd%20-%20.png)
-
-### 15.📂`cp -r` Komutu
-
-
-`cp -r` komutu, bir veya birden fazla dizini ve içindeki tüm dosya ve alt dizinleri **kopyalamak** için kullanılır. Bu komut, özellikle bir dizini tam olarak başka bir konuma taşımak istediğinizde kullanışlıdır.
-
-### Özellikler:
-- 🔄 **Rekursif Kopyalama**: `-r` seçeneği, dizinin içeriğini ve alt dizinleri de kapsayacak şekilde **özyinelemeli** olarak kopyalar.
-- 📁 **Dizin ve Alt Dizinler**: Bu komut, yalnızca dosyalarla sınırlı kalmaz, **alt dizinler ve dosyaların tümünü** de kopyalar.
-### Örnek Kullanım:
-```bash
-cp -r dizin1 dizin2
-```
-![Açıklayıcı Görsel](Resimler/cp%20komutu/cp.png)
-![Açıklayıcı Görsel](Resimler/cp%20komutu/cp1.png)
-
-### 16.🗂️ `mkdir` Komutu
-
-`mkdir` komutu, Linux ve Unix tabanlı işletim sistemlerinde **yeni bir dizin oluşturmak** için kullanılır. Bu komut, dosya sisteminizde düzen oluşturmanıza ve yeni dizinler eklemenize olanak tanır.
-
-### Özellikler:
-- ➕ **Yeni Dizin**: `mkdir` komutu, belirtilen adı taşıyan yeni bir dizin oluşturur.
-- 🛠️ **Birden Fazla Dizin**: Aynı anda birden fazla dizin oluşturmak için birden fazla dizin adı da verebilirsiniz.
-
-### Örnek Kullanım:
-```bash
-mkdir /yeni_dizin
-```
-![Açıklayıcı Görsel](Resimler/mkdir%20komutu/mkdir%20komutu.png)
-
-### 17. `mkdir -p` Komutu
-
-`mkdir -p` komutu, **iç içe dizinler oluşturmak** için kullanılır. Eğer belirtilen dizin yolu eksikse, `mkdir -p` komutu **önceden mevcut olmayan dizinleri otomatik olarak oluşturur**. Bu komut, birden fazla dizin oluşturmak için oldukça kullanışlıdır.
-
-### Özellikler:
-- 📁 **Alt Dizinler**: Bir dizin oluştururken, o dizin içinde bulunmayan alt dizinleri de otomatik olarak oluşturur.
-- 🔄 **Var Olan Dizinlere Dokunmaz**: Eğer dizin zaten mevcutsa, hata almazsınız. Komut sadece eksik dizinleri oluşturur.
-
-### Örnek Kullanım:
+Bulunduğunuz dizindeki dosya ve klasörleri listelemek için basitçe şu komutu kullanabilirsiniz:
 
 ```bash
-mkdir -p /ana_dizin/alt_dizin/alt_alt_dizin
+ls
 ```
-![Açıklayıcı Görsel](Resimler/mkdir%20komutu/mkdir%20-p%20komutu/mkdir%20-p.png)
-![Açıklayıcı Görsel](Resimler/mkdir%20komutu/mkdir%20-p%20komutu/mkdir-p1.png)
-![Açıklayıcı Görsel](Resimler/mkdir%20komutu/mkdir%20-p%20komutu/mkdir%20-p2.png)
+![görsel](/Resim%20linux/ls.png)
 
-### 18. 📂 `mkdir -v` Komutu
+### 2.`pwd` Komutu
 
-`mkdir -v` komutu, dizin oluşturulurken **hangi dizinlerin oluşturulduğunu** görüntülemenizi sağlar. Bu seçenek, **"verbose"** (detaylı) modunu etkinleştirir, yani işlem sırasında yapılan her adımı ekrana yazdırır.
+**`pwd`**, "print working directory" (geçerli dizini yazdır) ifadesinin kısaltmasıdır. Bu komut, terminalde şu an bulunduğunuz dizinin tam yolunu görüntüler. Kullanıcılar, özellikle dosya ve dizin yapıları arasında gezinirken, hangi dizinde olduklarını görmek için bu komutu kullanabilirler.
 
-### Özellikler:
-- 📝 **Detaylı Çıktı**: Her yeni dizin oluşturulduğunda, terminalde hangi dizinin oluşturulduğu hakkında bilgi verir.
-- 📋 **İzleme ve Hata Ayıklama**: Dizinlerin doğru şekilde oluşturulup oluşturulmadığını kolayca takip edebilirsiniz.
+### Örnek Kullanım
 
-### Örnek Kullanım:
+Geçerli dizininizi öğrenmek için **`pwd`** komutunu çalıştırabilirsiniz:
+
 ```bash
-mkdir -v yeni_dizin
+pwd
 ```
-![Açıklayıcı Görsel](Resimler/mkdir%20komutu/mkdir%20-v%20.png)
+![görsel](/Resim%20linux/pwd.png)
 
-### 19.📄 `touch` Komutu
+### 3.`cd` Komutu
 
-`touch` komutu, **bir veya birden fazla boş dosya oluşturmanızı** sağlar. Eğer belirtilen dosya zaten varsa, bu komut **dosyanın zaman damgasını** günceller. Yani, dosya içeriği değişmeden sadece dosyanın son erişim ve son değiştirilme zamanı güncellenir.
+**`cd`** (change directory), Linux'ta çalışma dizinini değiştirmek için kullanılan temel bir komuttur. Bu komut, dosya sistemi içinde hızlı ve kolay bir şekilde gezinmenizi sağlar.
 
-### Özellikler:
-- 🆕 **Boş Dosya Oluşturma**: Eğer dosya mevcut değilse, `touch` komutu yeni bir boş dosya oluşturur.
-- ⏰ **Zaman Damgası Güncelleme**: Eğer dosya zaten varsa, dosyanın son erişim ve değiştirilme tarihleri güncellenir.
-- 📅 **Son Değiştirilme Tarihini Görüntüleme**: Dosyanın zaman damgasını görmek için `ls -l` komutunu kullanabilirsiniz.
+### Örnek Kullanım
 
-### Örnek Kullanım:
+Bir dizine geçmek için **`cd`** komutunu şu şekilde kullanabilirsiniz:
 
-  ```bash
-  touch dosya.txt
+```bash
+cd Belgeler
 ```
-![Açıklayıcı Görsel](Resimler/touch%20komutu/touch.png)
-![Açıklayıcı Görsel](Resimler/touch%20komutu/touch1.png)
-### 20.🗑️ `rmdir` Komutu
+![görsel](/Resim%20linux/cd.png)
 
-`rmdir` komutu, **boş dizinleri** silmek için kullanılır. Bu komut, yalnızca içi boş olan dizinleri silebilir. Eğer dizin içinde dosya veya başka dizinler varsa, komut çalışmaz ve hata mesajı alırsınız.
+### 4.`mkdir` Komutu
 
-### Özellikler:
-- 🧹 **Boş Dizin Silme**: Sadece içi boş olan dizinleri silebilirsiniz.
-- 🚫 **Dolu Dizinleri Silme**: Eğer dizin içinde herhangi bir dosya veya alt dizin varsa, komut başarılı olmaz.
+**`mkdir`** (make directory), Linux'ta yeni bir dizin oluşturmak için kullanılan bir komuttur. Bu komut, belirtilen adla bir veya birden fazla dizin oluşturmanıza olanak tanır.
 
-### Örnek Kullanım:
+### Örnek Kullanım
 
-  ```bash
-  rmdir dizin_adi
-  ```
-  ![Açıklayıcı Görsel](Resimler/rmdir%20komutu/rmdir1.png)
-  ![Açıklayıcı Görsel](Resimler/rmdir%20komutu/rmdir2.png)
-  ![Açıklayıcı Görsel](Resimler/rmdir%20komutu/rmdir3.png)
-  ![Açıklayıcı Görsel](Resimler/rmdir%20komutu/rmdir4.png)
-  ![Açıklayıcı Görsel](Resimler/rmdir%20komutu/rmdir%205.png)
+Aşağıdaki komut, **`Projeler`** adında bir dizin oluşturur:
 
-  ### 21.🧹 `rmdir -p` Komutu
-
-`rmdir -p` komutu, **bir dizin silindiğinde içindeki boş alt dizinleri** de siler. Yani, alt dizinler silindikçe üst dizinler de silinir. Eğer üst dizinler de boşsa, bu dizinler de silinir. Bu özellik, dizin ağacındaki boş dizinleri topluca temizlemek için oldukça kullanışlıdır.
-
-### Özellikler:
-- 🔄 **Rekürsif Silme**: Bir dizin ve içindeki boş alt dizinleri tek bir komutla siler.
-- 🚫 **Boş Olmayan Dizinler**: Eğer alt dizinler içinde dosya veya başka içerikler varsa, bu dizinler silinmez.
-- 🗂️ **Üst Dizinlerin Silinmesi**: Alt dizinler silindikçe, bu alt dizinlerin bulunduğu üst dizinler de silinir, eğer o dizinler de boşsa.
-
-### Örnek Kullanım:
-  ```bash
-  rmdir -p dizin1/dizin2/dizin3
-  ```
-  ![Açıklayıcı Görsel](Resimler/rmdir%20komutu/rmdir6.png)
-  ![Açıklayıcı Görsel](Resimler/rmdir%20komutu/rmdir7.png)
-
- ### 22.🚚 `mv` Komutu
-
-`mv` komutu, bir **dosya veya dizini taşıma** veya **adını değiştirme** işlemi için kullanılır. Kaynak dosya veya dizin, belirtilen hedef yere taşınır veya yeni bir isimle değiştirilir. 
-
-### Özellikler:
-- 📂 **Dosya Taşıma**: Bir dosya veya dizini bir yerden başka bir yere taşıyabilirsiniz.
-- 🔄 **Ad Değiştirme**: Mevcut bir dosya veya dizinin adını değiştirebilirsiniz.
-- 🚀 **Geçici Taşıma ve Kopyalama**: Eğer hedef, taşıma işlemi için uygun bir dizinse, dosya direkt olarak bu dizine taşınır. Ad değiştirme işlemiyle de aynı komutla yapılabilir.
-
-### Örnek Kullanım:
-  ```bash
-  mv kaynak_dosya hedef_dizin
-  ```
-   ![Açıklayıcı Görsel](Resimler/mv%20komutu/mv1.png)
-    ![Açıklayıcı Görsel](Resimler/mv%20komutu/mv2.png)
-     ![Açıklayıcı Görsel](Resimler/mv%20komutu/mv3.png)
-### 23.📝`head` Komutu
-
-`head` komutu, bir dosyanın **ilk 10 satırını** görüntülemek için kullanılır. Bu komut, özellikle büyük dosyaları incelerken dosyanın baş kısmını hızlıca görmek için oldukça kullanışlıdır. Ayrıca, varsayılan olarak 10 satır gösteren bu komut, kullanıcı tarafından belirlenen başka bir satır sayısı ile de kullanılabilir.
-
-### Örnek Kullanım:
-  ```bash
-  head dosya_adı
+```bash
+mkdir Projeler
 ```
-  ![Açıklayıcı Görsel](Resimler/head%20komutu/head.png)
-  ![Açıklayıcı Görsel](Resimler/head%20komutu/head1.png)
+![görsel](/Resim%20linux/mkdir.png)
 
-### 24.📑 `cat` Komutu
+### 5.`rmdir` Komutu
 
-`cat` komutu, özellikle dosya içeriğini hızlıca görüntülemek veya birden fazla dosyayı birleştirerek yeni bir dosya oluşturmak için yaygın bir şekilde kullanılır. Bu komut, dosyaların içeriğini terminal üzerinde gösterirken, aynı zamanda içerik birleştirme ve dosya oluşturma işlemleri için de oldukça kullanışlıdır.
+**`rmdir`** (remove directory), boş dizinleri silmek için kullanılan bir komuttur. Bu komut, yalnızca içerisinde dosya veya alt dizin bulunmayan dizinleri kaldırabilir.
 
-### Örnek Kullanım:
-  ```bash
-  cat dosya_adı
+### Örnek Kullanım
+
+Aşağıdaki komut, mevcut konumda bulunan **`EskiProje`** adındaki boş bir dizini siler:
+
+```bash
+rmdir EskiProje
 ```
-  ![Açıklayıcı Görsel](Resimler/cat%20komutu/cat%20komutu.png)
-### 25.📑 `cat >>` Komutu
+![görsel](/Resim%20linux/rmdir.png)
 
-`cat` komutunun `>>` operatörüyle kullanımı, bir dosyanın içeriğini başka bir dosyanın sonuna eklemek için oldukça yaygın bir yöntemdir. Bu işlem, mevcut dosyanın içeriğini kaybetmeden yeni verileri dosyanın sonuna ekler.
+### 6.`rm` Komutu
 
-### Örnek Kullanım:
-  ```bash
-  cat dosya1.txt >> dosya2.txt
-  ```
-  ![Açıklayıcı Görsel](Resimler/cat%20komutu/cat%20_.png)
-### 26.📑 `cat -n` Komutu
-`cat -n` komutu, bir dosyanın içeriğini satır numaralarıyla birlikte görüntülemek için kullanılır. Bu komut, her satırın başına bir numara ekler, böylece dosyanın hangi satırında olduğunuzu kolayca görebilirsiniz.
+**`rm`** (remove), dosyaları ve dizinleri terminal üzerinden silmek için kullanılan güçlü bir komuttur.
 
-### Örnek Kullanım:
-  ```bash
-  cat -n dosya.txt
-  ```
-  ![Açıklayıcı Görsel](Resimler/cat%20komutu/cat%20-n.png)
+### Örnek Kullanım
 
-  ### 27. 🗑️ `rm -r` Komutu
-`rm -r` komutu, bir dizini ve altındaki tüm dosyaları, alt dizinleri ve içerikleri silmek için kullanılır. Bu komut, **rekürsif** (özyinelemeli) olarak çalıştığı için, belirtilen dizindeki tüm alt dizinleri ve dosyaları da siler. Bu işlem kalıcıdır ve geri alınamaz.
+Bir dosyayı silmek için:
 
-### Örnek Kullanım:
-
-- **Bir Dizini ve İçeriğini Silmek**:
-  ```bash
-  rm -r dizin_adı
-  ```
-    ![Açıklayıcı Görsel](Resimler/rm%20komutu/rm1.png)
-      ![Açıklayıcı Görsel](Resimler/rm%20komutu/rm2.png)
-
-      ### 28.🗑️ `rm -f` Komutu
-
-`rm -f` komutu, dosyaları **zorla** silmek için kullanılır. Bu seçenek, silme işlemi sırasında **uyarı mesajları** vermeden doğrudan silme işlemini gerçekleştirir. Özellikle yazma korumalı dosyaları silerken, kullanıcıya herhangi bir uyarı veya onay isteği sunmadan dosyayı silmek için kullanılır.
-
-### Örnek Kullanım:
-  ```bash
-  rm -f dosya_adı
+```bash
+rm -r dosya.txt
 ```
-  ![Açıklayıcı Görsel](Resimler/rm%20komutu/rm3.png)
-   ![Açıklayıcı Görsel](Resimler/rm%20komutu/rm4.png)
-   ### 29.❗`rm -i` Komutu
-   rm -i` komutu, her dosyayı silmeden önce **onay alır**. Bu seçenek, silmek istediğiniz dosyalar için her defasında "evet" veya "hayır" cevabı vermenizi sağlar. Bu sayede, yanlışlıkla dosya silme riskini azaltır.
+![görsel](/Resim%20linux/rm/rm.png)
+![görsel](/Resim%20linux/rm/rm1.png)
+### 7.`cp` Komutu
+
+**`cp`** (copy), dosya ve dizinleri bir yerden başka bir yere kopyalamak için kullanılan bir komuttur.
+
+### Örnek Kullanım
+
+Bir dosyayı başka bir konuma kopyalamak için:
+
+```bash
+cp dosya.txt /hedef/klasor/
+```
+![görsel](/Resim%20linux/cp.png)
+
+### 8.`mv` Komutu
+
+**`mv`** (move), dosya ve dizinleri taşımak veya yeniden adlandırmak için kullanılan bir komuttur.
+
+### Örnek Kullanım
+
+Bir dosyayı başka bir dizine taşımak için:
+
+```bash
+mv dosya.txt /hedef/klasor/
+```
+![görsel](/Resim%20linux/mv.png)
+
+### 9.`touch` Komutu
+
+**`touch`**, yeni bir dosya oluşturmak veya mevcut bir dosyanın son değiştirilme zamanını güncellemek için kullanılan bir komuttur.
+
+### Örnek Kullanım
+
+Bir dosya oluşturmak için:
+
+```bash
+touch dosya.txt
+```
+![görsel](/Resim%20linux/touch.png)
+
+### 10.`tree` Komutu
+
+**`tree`**, bir dizin yapısını hiyerarşik bir ağaç formatında görselleştirmek için kullanılan bir komuttur. Bu, dosya ve alt dizinleri daha net bir şekilde anlamanızı sağlar.
+
+### Örnek Kullanım
+
+Basit bir dizin ağacı oluşturmak için:
+
+```bash
+tree
+```
+![görsel](/Resim%20linux/tree.png)
+
+## Dosya Görüntüleme ve Düzenleme
+### 11.  `cat` Komutu
+
+**`cat`** (concatenate), Linux'ta dosya içeriğini görüntülemek, birden fazla dosyanın içeriğini birleştirmek veya yeni dosyalar oluşturmak için kullanılan temel bir komuttur.
+
+### Örnek Kullanım
+
+Bir dosyanın içeriğini terminalde görüntülemek için:
+
+```bash
+cat dosya.txt
+```
+![görsel](/Resim%20linux/cat.png)
+
+### 12.`more` Komutu
+
+**`more`**, Linux'ta dosya içeriğini sayfa sayfa görüntülemek için kullanılan bir komuttur. Özellikle büyük dosyalarla çalışırken, tüm dosya içeriğini bir anda görmek yerine, daha rahat bir şekilde sayfa sayfa görüntüleme yapmanıza olanak sağlar.
+
+### Örnek Kullanım
+
+Bir dosyanın içeriğini sayfa sayfa görüntülemek için:
+
+```bash
+more dosya.txt
+```
+![görsel](/Resim%20linux/more.png)
+
+### 13.`less` Komutu
+
+**`less`**, Linux'ta büyük dosyaları veya uzun çıktıları daha rahat bir şekilde görüntülemek için kullanılan bir komuttur. `more` komutuna benzer şekilde, ancak daha fazla özellik sunar. **`less`** komutu ile dosya içeriğini sayfa sayfa görüntüleyebilir, ileri geri gezinebilir ve daha fazlasını yapabilirsiniz.
+
+### Örnek Kullanım
+
+Bir dosyanın içeriğini görüntülemek için:
+
+```bash
+less dosya.txt
+```
+### 14.`head` Komutu
+
+**`head`** komutu, bir dosyanın baş kısmındaki ilk birkaç satırı hızlıca görüntülemek için kullanılan basit ama kullanışlı bir komuttur. Özellikle büyük dosyalarla çalışırken, sadece dosyanın başındaki bilgileri görmek istediğinizde bu komut oldukça işinize yarar.
+
+### Örnek Kullanım
+
+Varsayılan olarak, **`head`** komutu dosyanın ilk 10 satırını gösterir:
+
+```bash
+head dosya.txt
+```
+![görsel](/Resim%20linux/head.png)
+
+### 15 `tail` Komutu
+
+**`tail`** komutu, bir dosyanın son kısmındaki son satırları görüntülemek için kullanılır. Özellikle log dosyalarını izlerken veya son verileri kontrol ederken oldukça faydalıdır. **`tail`** komutu, dosyanın sonunda olan değişiklikleri hızlıca görmek için kullanılır.
+
+### Örnek Kullanım
+
+Varsayılan olarak **`tail`** komutu, dosyanın son 10 satırını gösterir:
+
+```bash
+tail dosya.txt
+```
+### 16.`nano` Komutu
+
+**`nano`**, Linux'te kullanılan popüler bir metin düzenleyicisidir. Komut satırından çalışan ve dosya düzenleme işlemleri için oldukça basit ve kullanıcı dostu bir arayüz sunar. Özellikle hızlıca bir dosya düzenlemek gerektiğinde tercih edilir.
+
+### Örnek Kullanım
+
+**`nano`** komutunu bir dosya adıyla kullanarak bir dosyayı açabilirsiniz. Eğer dosya mevcutsa, içerik düzenlemeye başlarsınız; dosya yoksa, yeni bir dosya oluşturulur.
+
+```bash
+nano dosya.txt
+```
+![görsel](/Resim%20linux/nano.png)
+### 17. `vim` Komutu
+
+**`vim`**, Linux'te ve diğer Unix tabanlı işletim sistemlerinde kullanılan güçlü bir metin düzenleyicisidir. **`vim`**, **`vi`** metin düzenleyicisinin gelişmiş bir versiyonudur ve oldukça esnek ve güçlü özelliklere sahiptir. Ancak, **`vim`**'i öğrenmek biraz zaman alabilir çünkü oldukça fazla klavye kısayoluna ve modlara sahiptir.
+
+### Örnek Kullanım
+
+Bir dosyayı **`vim`** ile açmak için aşağıdaki komutu kullanabilirsiniz:
+
+```bash
+vim dosya.txt
+```
+![görsel](/Resim%20linux/vim.png)
+
+### 18.`grep` Komutu
+
+**`grep`** (Global Regular Expression Print), Linux ve diğer Unix tabanlı sistemlerde metin içeriği üzerinde arama yapmak için kullanılan güçlü bir komuttur. **`grep`**, belirli kelime veya ifadeleri dosyalarda veya çıktılarda aramak için kullanılır ve düzenli ifadeler (regular expressions) ile de uyumlu çalışabilir.
+
+### Örnek Kullanım
+
+Bir metin dosyasında belirli bir kelimeyi veya ifadeyi aramak için aşağıdaki komutu kullanabilirsiniz:
+
+```bash
+grep "kelime" dosya.txt
+```
+![görsel](/Resim%20linux/grep.png)
+
+### 19.`wc` Komutu
+
+**`wc`** (Word Count), bir dosyanın veya metin çıktısının kelime, satır ve karakter sayısını hızlıca öğrenmek için kullanılan bir Linux komutudur. Bu komut, dosyanın içeriğini analiz ederek çeşitli bilgileri döndürebilir ve özellikle metin dosyalarının boyutlarını kontrol etmek için kullanılır.
+
+### Örnek Kullanım
+
+```bash
+wc  dosya.txt
+```
+![görsel](/Resim%20linux/wc.png)
+
+### 20.`sort` Komutu
+
+**`sort`** komutu, dosyalardaki verileri sıralamak için kullanılan güçlü bir araçtır. Varsayılan olarak, alfabetik sıralama yapar, ancak farklı seçeneklerle sayısal, ters ve özel sıralamalar yapabilirsiniz. Bu komut, verileri düzenlemek ve analiz etmek için sıklıkla kullanılır.
+
+### Örnek Kullanım
+
+Bir dosyadaki satırları alfabetik olarak sıralamak için **`sort`** komutunu kullanabilirsiniz:
+
+```bash
+sort dosya.txt
+```
+![görsel](/Resim%20linux/sort.png)
 
 
-### Örnek Kullanım:
-  ```bash
-  rm -i dosya_adı
-  ```
-  ![Açıklayıcı Görsel](Resimler/rm%20komutu/rm5.png)
-     ![Açıklayıcı Görsel](Resimler/rm%20komutu/rm6.png)
+## Kullanıcı Yönetimi
 
-### 30. 🗑️ `rm -v` Komutu: Silme İşlemi Hakkında Bilgi Verir
+### 21. `whoami` Komutu
 
-`rm -v` komutu, yapılan silme işlemini ekranda **görsel olarak gösterir**. Hangi dosyaların silindiğini çıktıda belirtir, böylece hangi dosyaların silindiği hakkında bilgi sahibi olabilirsiniz.
+**`whoami`** komutu, terminalde oturum açmış kullanıcıyı hızlı bir şekilde öğrenmek için kullanılır. Kullanıcı adı bilgisi, sistemde aktif olan oturumu belirten bir komut olarak oldukça faydalıdır.
+
+### Örnek Kullanım
+
+Terminalde şu komutu çalıştırarak, sistemdeki aktif kullanıcı adını öğrenebilirsiniz:
+
+```bash
+whoami
+```
+![görsel](/Resim%20linux/whoami.png)
+
+### 22. `id` Komutu
+
+**`id`** komutu, Linux ve Unix tabanlı sistemlerde oturum açmış kullanıcının kimlik bilgilerini, kullanıcı adı, kullanıcı ID'si (UID), grup adı ve grup ID'si (GID) gibi bilgileri gösterir. Ayrıca, kullanıcının ait olduğu grupların listesi de bu komutla elde edilebilir.
+
+### Örnek Kullanım
+
+Terminalde **`id`** komutunu çalıştırarak, sistemde oturum açmış kullanıcının kimlik bilgilerini öğrenebilirsiniz:
+
+```bash
+id
+```
+![görsel](/Resim%20linux/id.png)
+
+### 23.`who` Komutu
+
+**`who`** komutu, Linux ve Unix tabanlı sistemlerde, sisteme giriş yapmış olan kullanıcıları gösterir. Bu komut, oturum açan kullanıcıların adlarını, giriş tarihlerini, oturum açma terminalini ve oturum açma zamanlarını listeler. Sistem yöneticileri ve kullanıcılar için faydalı bir komut olup, aktif kullanıcılar hakkında bilgi verir.
+
+### Örnek Kullanım
+
+Terminalde **`who`** komutunu çalıştırarak, sisteme giriş yapmış tüm kullanıcıları görebilirsiniz:
+
+```bash
+who
+```
+![görsel](/Resim%20linux/who.png)
+
+### 24. `adduser` Komutu
+
+**`adduser`** komutu, Linux Mint ve diğer Debian tabanlı dağıtımlarda yeni bir kullanıcı hesabı oluşturmak için kullanılır. Bu komut, kullanıcıyı sistemdeki ilgili dosyalara ve dizinlere ekler, şifre belirler ve kullanıcıya bazı ek yapılandırmalar yapmanıza olanak tanır.
+
+### Örnek Kullanım
+
+Yeni bir kullanıcı oluşturmak için aşağıdaki komutu kullanabilirsiniz:
+
+```bash
+sudo adduser yeni_kullanici
+```
+![görsel](/Resim%20linux/adduser.png)
+
+### 25.`passwd` Komutu
+
+**`passwd`** komutu, Linux Mint ve diğer Linux dağıtımlarında kullanıcıların şifrelerini değiştirmek için kullanılır. Bu komut, hem mevcut bir kullanıcının şifresini değiştirmeye hem de yeni bir şifre belirlemeye olanak tanır.
+
+### Örnek Kullanım
+
+Bir kullanıcı, kendi şifresini değiştirmek için terminalde şu komutu kullanabilir:
+
+```bash
+passwd
+```
+![görsel](/Resim%20linux/passwd.png)
+
+### 26.`su` Komutu
+
+**`su`** (substitute user), Linux sistemlerinde başka bir kullanıcıya geçmek veya root (yönetici) yetkileriyle işlem yapmak için kullanılan bir komuttur. Bu komut, kullanıcıların belirli işlemleri daha yüksek yetkilerle gerçekleştirmelerine olanak tanır.
+
+### Örnek Kullanım
+
+Bir kullanıcı, sistemde root kullanıcısına geçiş yapmak için aşağıdaki komutu kullanabilir:
+
+```bash
+su
+```
+![görsel](/Resim%20linux/su.png)
+
+### 27.`groups` Komutu
+
+**`groups`** komutu, bir kullanıcının hangi gruplara ait olduğunu gösteren bir komuttur. Bu komut, özellikle kullanıcı yönetimi ve izinlerle ilgili işlemler yaparken faydalıdır. Linux sistemlerinde, her kullanıcı belirli gruplara ait olabilir ve bu gruplara ait izinlerle işlem yapar.
+
+### Örnek Kullanım
+
+Mevcut kullanıcı için ait olduğu grupları görmek amacıyla **`groups`** komutunu şu şekilde çalıştırabilirsiniz:
+
+```bash
+groups
+```
+![görsel](/Resim%20linux/groups.png)
+
+### 28.`userdel` Komutu
+
+**`userdel`** komutu, Linux sistemlerinde bir kullanıcıyı tamamen silmek için kullanılır. Bu komut, belirtilen kullanıcıyı sistemden kaldırır. Kullanıcı silindiğinde, kullanıcıya ait tüm dosyalar ve gruplar kaldırılabilir, ancak bu işlem öncesinde dikkatlice düşünülmelidir.
+
+### Örnek Kullanım
+
+Bir kullanıcıyı sistemden silmek için **`userdel`** komutunu şu şekilde kullanabilirsiniz:
+
+```bash
+sudo userdel kullanici_adi
+```
+![görsel](/Resim%20linux/userdel.png)
+
+### 29.## `usermod` Komutu
+
+**`usermod`** komutu, mevcut bir kullanıcıyı değiştirmek için kullanılır. Kullanıcı adı, grubunu, ev dizinini ve diğer hesap bilgilerini güncellemek için bu komut oldukça kullanışlıdır. Sistemdeki kullanıcılar üzerinde düzenlemeler yapmanıza olanak tanır.
+
+### Örnek Kullanım
+
+Bir kullanıcının adını değiştirmek için **`-l`** parametresini kullanabilirsiniz. Aşağıdaki komut, **`eski_ad`** adlı kullanıcının adını **`yeni_ad`** olarak değiştirir:
+
+```bash
+sudo usermod -l yeni_ad eski_ad
+```
+![görsel](/Resim%20linux/usermod.png)
+
+## Sistem bilgileri
+
+### 30.`uname` Komutu
+
+**`uname`** komutu, Linux sistem hakkında temel bilgi sağlar. Çoğunlukla çekirdek adı, sürümü, işlemci mimarisi gibi bilgileri görmek için kullanılır. Bu komut, sistemin donanımı, yazılımı ve işletim sistemi hakkında bilgi edinmek için çok kullanışlıdır.
+
+### Örnek Kullanım
+
+`uname` komutu, işletim sistemi hakkında temel bilgileri gösterebilir. Aşağıdaki komut sadece işletim sistemi çekirdek adını görüntüler:
+
+```bash
+uname
+```
+![görsel](/Resim%20linux/uname.png)
+
+### 31.`hostname` Komutu
+
+**`hostname`** komutu, sistemin ağda tanımlı ismini görüntülemek ve değiştirmek için kullanılır. Bu komut, genellikle bir bilgisayarın ağ üzerindeki kimliğini tanımlayan ismi gösterir. Ayrıca, sistemin ağdaki tanınabilirliğini artırmak amacıyla hostname değiştirilebilir.
+
+### Örnek Kullanım
+
+Sadece **`hostname`** komutunu çalıştırarak sistemin mevcut ağ ismini öğrenebilirsiniz:
+
+```bash
+hostname
+```
+![görsel](/Resim%20linux/hostname.png)
+
+### 32. `df` Komutu
+
+**`df`** (disk free) komutu, sistemdeki dosya sistemlerinin kullanım durumunu gösterir. Bu komut, bağlı olan dosya sistemlerinin disk alanı kullanımını, toplam alanı ve boş alanı görüntülemenize olanak tanır.
+
+### Örnek Kullanım
+
+En basit şekilde **`df`** komutunu çalıştırarak, bağlı olan tüm dosya sistemlerinin disk kullanım bilgilerini görebilirsiniz:
+
+```bash
+df
+```
+![görsel](/Resim%20linux/df.png)
+
+### 33.`du` Komutu
+
+**`du`** (disk usage) komutu, bir dizin veya dosyanın disk üzerinde kapladığı alanı gösterir. Bu komut, özellikle büyük dosya ve dizinlerin yer kaplamasını incelemek için kullanılır.
+
+### Örnek Kullanım
+
+En basit haliyle **`du`** komutunu çalıştırarak, geçerli dizin ve alt dizinlerin disk kullanımını görebilirsiniz:
+
+```bash
+du
+```
+
+### 34.`top` Komutu
+
+**`top`** komutu, sistemdeki işlemci kullanımını, bellek kullanımını ve diğer sistem kaynaklarını dinamik bir şekilde görüntülemek için kullanılır. Bu komut, sistemde çalışan işlemleri anlık olarak izleyebilmek için son derece faydalıdır.
+
+### Örnek Kullanım
+
+En basit haliyle **`top`** komutunu terminalde çalıştırarak, sistemdeki işlemler hakkında anlık bilgi alabilirsiniz:
+
+```bash
+top
+```
+![görsel](/Resim%20linux/top.png)
 
 
-### Örnek Kullanım:
-  ```bash
-  rm -v dosya_adı
-  ```
-   ![Açıklayıcı Görsel](Resimler/rm%20komutu/rm7.png)
-      ![Açıklayıcı Görsel](Resimler/rm%20komutu/rm8.png)
-# 🏆Sonuç:
-#### Bu projede, Linux komutları konusunda derinlemesine bir keşif yaptık ve her bir komutun işlevini, kullanım amacını ve örnek uygulamalarını detaylı bir şekilde inceledik. Amacımız, temel komutları öğrenmekle birlikte, bu komutların daha gelişmiş kullanım senaryolarını da anlamak ve projelerimizde faydalı bir şekilde uygulamaktı.
+### 35.`htop` Komutu
 
-## Öne Çıkan Başarılar:
-- Komutların Temel İşlevselliği: ls, cd, cp, mv gibi temel Linux komutlarının nasıl çalıştığını öğrendik ve her birinin nasıl kullanıldığını çeşitli örneklerle açıklığa kavuşturduk.
+**`htop`**, sistemdeki süreçleri ve kaynak kullanımını görsel olarak takip etmenizi sağlayan interaktif bir araçtır. **`top`** komutunun daha gelişmiş ve kullanıcı dostu bir versiyonudur. **`htop`**, işlemci, bellek, swap alanı ve diğer sistem kaynakları hakkında anlık bilgiler sağlar. Ayrıca, işlemleri sıralama, filtreleme ve sonlandırma gibi işlemleri kolayca yapmanıza olanak tanır.
 
-- Gelişmiş Seçenekler: ls -l, ls -a, rm -rf, cp -r gibi gelişmiş seçenekleri öğrendik ve bunların nasıl işlev sağladığını gördük. Özellikle dosya ve dizin işlemleri yaparken daha hızlı ve etkili bir şekilde çalışmamızı sağladılar.
+### Örnek Kullanım
 
-- Görsel İçerik ve Örnekler: Gerçek dünyada karşılaşılan senaryoları daha iyi anlamak için, her komut için ekran görüntüleri ekledik. Bu, komutların nasıl çalıştığını görselleştirerek öğrenmeyi çok daha etkili hale getirdi.
+En basit haliyle **`htop`** komutunu terminalde çalıştırarak, sistemdeki işlemleri ve kaynak kullanımını görsel olarak izleyebilirsiniz:
 
-- Kapsamlı Kullanım: Her komutun farklı seçenekleriyle birlikte kullanımı hakkında bilgi sahibi olduk. Bu, komutların esnekliğini keşfetmemize ve her birini çeşitli senaryolar için uyarlamamıza olanak sağladı.
+```bash
+htop
+```
+![görsel](/Resim%20linux/htop.png)
 
-- Geriye Dönük Değerlendirme ve İleriye Dönük Adımlar: Proje boyunca edindiğimiz bilgiler, Linux ortamında daha verimli çalışabilmemize yardımcı oldu. Öğrendiklerimizi gerçek dünyadaki sistem yönetimi ve dosya yönetimi senaryolarına uygulayarak, komutların gücünü ve esnekliğini keşfettik.
+### 36. `ps` Komutu
 
-## Proje Sürecinde Edinilen Beceriler:
-- Komut Satırı Yönetimi: Linux terminalinde, dosya ve dizin yönetiminden, dosya içeriklerini görüntülemeye kadar birçok işlemde komut satırını etkin bir şekilde kullanmayı öğrendik.
+**`ps`** komutu, Linux sistemlerinde çalışan işlemleri listelemek için kullanılır. Bu komut, sistemdeki aktif işlemlerin bilgilerini gösterir ve her bir işlem hakkında detaylı bilgi almanızı sağlar. **`ps`**, özellikle sistem yöneticilerinin ve geliştiricilerin, çalışan işlemleri izlemesi ve yönetmesi için temel bir araçtır.
 
-- Verimli Çalışma Prensipleri: -v, -r, -a gibi komut seçeneklerinin ne zaman ve nasıl kullanıldığını bilmek, işleri hızlı ve hatasız yapmamıza olanak tanıdı.
+### Örnek Kullanım
 
-- Problem Çözme ve Uygulama: Linux komutları ile çeşitli dosya yönetimi ve düzenleme görevlerini yerine getirirken, problemleri hızlıca çözebilme yeteneğimizi geliştirdik.
+En basit haliyle, **`ps`** komutu yalnızca mevcut terminal oturumundaki işlemleri listeler:
 
-## Sonuç Olarak:
-Bu proje, Linux komutlarının gücünü ve çok yönlülüğünü derinlemesine anlamamıza olanak sağladı. Edindiğimiz bilgi ve beceriler, günlük sistem yönetimi ve programlama görevlerinde oldukça faydalı olacaktır. Ayrıca, bu komutları projelerimizde etkin bir şekilde kullanarak verimliliğimizi artırabileceğiz.
+```bash
+ps
+```
+### 37.`free` Komutu
+
+**`free`** komutu, Linux sistemlerinde bellek (RAM) kullanımını görmek için kullanılan basit ve etkili bir araçtır. Sistemdeki toplam, kullanılan ve boş bellek miktarını gösterir. Bu komut, özellikle sistem yöneticilerinin ve geliştiricilerin bellek kullanımını izlemeleri için oldukça faydalıdır.
+
+### Örnek Kullanım
+
+**`free`** komutunu herhangi bir ek parametre olmadan çalıştırdığınızda, sistemin genel bellek kullanımına dair temel bilgileri görüntüler:
+
+```bash
+free
+```
+![görsel](/Resim%20linux/free.png)
+
+### 38.`uptime` Komutu
+
+**`uptime`** komutu, Linux sisteminin ne kadar süredir çalıştığını gösteren basit bir araçtır. Sistemin başlatılmasından itibaren geçen süreyi, ayrıca sistem yükünü ve aktif kullanıcı sayısını hızlıca görüntülemenizi sağlar. Bu komut, özellikle sistem yöneticileri ve geliştiriciler için sistem durumu hakkında bilgi edinmek için kullanışlıdır.
+
+### Örnek Kullanım
+
+
+
+**`uptime`** komutunu terminalde çalıştırarak sistemin çalışma süresi hakkında bilgi alabilirsiniz:
+
+```bash
+uptime
+```
+![görsel](/Resim%20linux//uptime.png)
+
+### 39.`dmesg` Komutu
+
+**`dmesg`** komutu, Linux çekirdek mesajlarını görüntülemek için kullanılan güçlü bir araçtır. Bu komut, sistemdeki donanım ve çekirdek ile ilgili olayları, hata mesajlarını ve sistem başlatma işlemleri sırasında oluşan log kayıtlarını hızlı bir şekilde incelemenizi sağlar. **`dmesg`**, genellikle sistem hatalarını teşhis etmek, donanım sorunlarını gidermek ve çekirdek seviyesindeki logları kontrol etmek için kullanılır.
+
+### Örnek Kullanım
+
+**`dmesg`** komutunu terminalde çalıştırarak sistemin çekirdek mesajlarını görebilirsiniz:
+
+```bash
+dmesg
+```
+![görsel](/Resim%20linux/dmesg.png)
+
+## Ağ ve İnternet
+### 40. `ping` Komutu
+
+**`ping`** komutu, ağ bağlantılarının doğruluğunu test etmek için kullanılan en temel ağ aracıdır. Bu komut, belirli bir hedefe ICMP (Internet Control Message Protocol) paketleri göndererek hedefin ulaşılabilirliğini ve yanıt süresini ölçer. Genellikle ağ bağlantı sorunlarını tespit etmek ve bir cihazın ağ üzerinde aktif olup olmadığını kontrol etmek için kullanılır.
+
+### Örnek Kullanım
+
+**`ping`** komutunu kullanarak bir IP adresine veya domaine ping atabilirsiniz. Örneğin, Google'a ping atmak için:
+
+```bash
+ping google.com
+```
+![görsel](/Resim%20linux/ping.png)
+
+### 41.## `ifconfig` Komutu
+
+**`ifconfig`** (Interface Configuration) komutu, ağ arabirimlerini (network interfaces) yönetmek ve yapılandırmak için kullanılan bir komuttur. Bu komut, ağ bağlantılarınız hakkında bilgi almanıza ve bu bağlantılar üzerinde değişiklikler yapmanıza olanak sağlar. Genellikle ağ adresi yapılandırmaları ve ağ arayüzü durumunu kontrol etmek için kullanılır.
+
+### Örnek Kullanım
+
+Ağ arayüzlerinin mevcut durumu hakkında bilgi almak için **`ifconfig`** komutunu şu şekilde çalıştırabilirsiniz:
+
+```bash
+ifconfig
+```
+![görsel](/Resim%20linux/ifconfig.png)
+
+### 42. `ip a` Komutu
+
+**`ip a`** komutu, Linux sistemlerde ağ arayüzlerini ve bu arayüzlere ait IP adreslerini görüntülemek için kullanılan bir komuttur. Bu komut, ağ arayüzlerinin detaylı bilgilerini sağlar ve özellikle ağ bağlantılarını yönetirken veya sorun giderme işlemlerinde kullanışlıdır.
+
+### Örnek Kullanım
+
+**`ip a`** komutunu çalıştırarak sistemdeki tüm ağ arayüzlerinin durumunu ve bu arayüzlere bağlı IP adreslerini görüntüleyebilirsiniz:
+
+```bash
+ip a
+```
+![görsel](/Resim%20linux/ip%20a.png)
+
+### 43. `curl` Komutu
+
+**`curl`** komutu, URL'ler üzerinden veri indirmek ve yüklemek için kullanılan güçlü bir komuttur. Genellikle HTTP, HTTPS, FTP gibi protokollerle veri iletimi yapmak için kullanılır. Bu komut, veri almak, göndermek veya bir URL üzerinden bilgi almak için yaygın olarak kullanılır.
+
+### Örnek Kullanım
+
+Bir URL'den içerik almak için **`curl`** komutunu şu şekilde kullanabilirsiniz:
+
+```bash
+curl https://www.example.com
+```
+### 44.## `wget` Komutu
+
+**`wget`**, web üzerinde dosya indirmek için kullanılan güçlü ve çok yönlü bir komuttur. Çoğunlukla HTTP, HTTPS ve FTP protokollerini kullanarak dosyaları indirmenize olanak tanır. Ayrıca, arka planda çalışabilir ve internet bağlantınız kesilse bile indirme işlemini yeniden başlatabilirsiniz.
+
+### Örnek Kullanım
+
+Bir dosyayı bir URL'den indirmek için basitçe **`wget`** komutunu kullanabilirsiniz. Örneğin, **`example.txt`** dosyasını indirmek için şu komutu kullanabilirsiniz:
+
+```bash
+wget https://www.example.com/example.txt
+```
+
+### 45.`netstat` Komutu
+
+**`netstat`**, ağ bağlantıları, yönlendirme tabloları, arayüz istatistikleri ve ağ protokollerine ilişkin bilgi sağlamak için kullanılan bir komuttur. Sistemdeki ağ bağlantılarını ve bunların durumlarını görmek için oldukça yararlı bir araçtır.
+
+### Örnek Kullanım
+
+Aktif ağ bağlantılarını görmek için **`netstat`** komutunu şu şekilde kullanabilirsiniz:
+
+```bash
+netstat
+```
+![görsel](/Resim%20linux/netstat.png)
+
+### 46. `traceroute` Komutu
+
+**`traceroute`**, bir hedef sunucuya ulaşana kadar geçen ağ yollarını ve bu yolların her birindeki gecikme sürelerini izlemek için kullanılan güçlü bir ağ teşhis aracıdır.
+
+### Kullanım Senaryosu: Bir Web Sitesine Giden Ağ Yolunu İzlemek
+
+Bir web sitesine olan ağ bağlantısının geçtiği yolları görmek için **`traceroute`** komutunu şu şekilde kullanabilirsiniz:
+
+```bash
+traceroute example.com
+```
+
+### 47. `ssh` Komutu
+
+**`ssh`** (Secure Shell), uzak bir sunucuya güvenli bir şekilde bağlanmak için kullanılan bir protokoldür. Komut, şifreli bir bağlantı sağlar ve uzaktaki bir makine üzerinde komutlar çalıştırmanıza olanak tanır.
+
+### Kullanım Senaryosu: Uzak Sunucuya Bağlanma
+
+Bir sunucuya bağlanmak için şu komutu kullanabilirsiniz:
+
+```bash
+ssh username@remote-server
+```
+
+### 48. `scp` Komutu
+
+**`scp`** (Secure Copy), SSH protokolünü kullanarak dosyaları güvenli bir şekilde bir sistemden diğerine kopyalamak için kullanılan bir komuttur. Yerel makineden uzak bir sunucuya, uzak bir sunucudan yerel makineye veya iki uzak sunucu arasında dosya transferi sağlar.
+
+### Kullanım Senaryosu: Yerel Makineden Uzak Sunucuya Dosya Kopyalama
+
+Aşağıdaki komut, yerel bir dosyayı uzak sunucuya kopyalar:
+
+```bash
+scp /path/to/local/file username@remote-server:/path/to/remote/directory
+```
+### 49.`ftp` Komutu
+
+**`ftp`**, dosya aktarım protokolü (File Transfer Protocol) kullanarak bir sunucuya bağlanmak ve dosya transferi gerçekleştirmek için kullanılan bir komuttur. Basit bir istemci arayüzü sunar ve uzak sunucularda dosya yükleme, indirme, listeleme gibi işlemleri destekler.
+
+### Kullanım Senaryosu: Bir FTP Sunucusuna Bağlanma
+
+Aşağıdaki komut, belirli bir FTP sunucusuna bağlanmanızı sağlar:
+
+```bash
+ftp ftp.example.com
+```
+### 50. `tar` Komutu
+
+**`tar`** (Tape Archive), dosyaları bir arşivde birleştirmek veya bir arşivi açmak için kullanılan bir komuttur. Yaygın olarak dosyaları sıkıştırmak veya sıkıştırılmış arşivleri açmak için kullanılır.
+
+---
+
+### Kullanım Senaryosu: Bir Dizini Sıkıştırılmış Arşiv Haline Getirme
+
+Aşağıdaki komut, bir dizini **`.tar.gz`** formatında sıkıştırır:
+
+```bash
+tar -czvf archive-name.tar.gz directory-name/
+```
+## Sonuç
+
+- Linux Mint'teki komutlar, sistem üzerinde hızlı, etkili ve esnek bir şekilde işlem yapmanızı sağlar. Bu rehberde incelediğiniz komutlar, dosya yönetiminden kullanıcı ayarlarına, ağ işlemlerinden sistem izlemeye kadar geniş bir yelpazede işlevler sunar.
+
+- Bu bilgileri uygulayarak:
+
+- Zamandan tasarruf edebilir,
+- Sisteminizi daha iyi anlayabilir,
+- Komut satırı becerilerinizi geliştirebilirsiniz.
+- Unutmayın, Linux'un gücü detaylarda gizlidir! Deneme-yanılma yöntemiyle öğrenmekten çekinmeyin ve her komutta yeni bir şeyler keşfedin. 🎯
+
+“En iyi kullanıcı, sistemini en iyi tanıyan kişidir.”
+### İncelediğiniz için teşekkürler.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
